@@ -18,7 +18,7 @@ setInterval(function(){
 	x = (Math.random() * (max - min)) + min;
 	socket.emit("testTime",new Date().getTime());
 	
-},1000);
+},x);
 
 socket.on("testTime",function(command){
 	nodeLog.write(new Date().getTime() - command.time +"\n");

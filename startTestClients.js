@@ -3,7 +3,7 @@ var sys = require('util');
 var clients = parseInt(process.argv[2]) || 0 ;
 
 if(clients == 0){
-	clients = 5;
+	clients = 40;
 }
 
 for(var i = 0;i<clients;i++){

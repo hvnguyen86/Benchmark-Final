@@ -1,0 +1,24 @@
+label clients
+input#clients(type="text")
+br
+label host
+input#host(type="text",value="http://176.34.100.20:3000/")
+br
+button#start start
+button#stop stop
+textarea#output
+#conn conn
+#status
+script(src="/socket.io/socket.io.js")
+script(src="/javascripts/test.js")
+script 
+ $('#start').click(function(){
+  $('#status').html('Open Sockets to '+host)
+  start();
+ });
+ 
+ $('#stop').click(function(){
+  stop();
+  $('#status').html('Sockets disconnectd');
+ });
+ 

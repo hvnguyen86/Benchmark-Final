@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>node_modules/socket.io-client/node_modules/ws/bench/speed.js</string>
+	<string>CRTest.js</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -68,23 +68,9 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>13</integer>
+				<integer>40</integer>
 				<key>line</key>
-				<integer>6</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>node_modules/socket.io-client/node_modules/ws/bench/speed.js</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>0</integer>
+				<integer>15</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -119,6 +105,34 @@
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
+		<key>startTestClients.js</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>1</integer>
+				<key>line</key>
+				<integer>13</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>test.js</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>5</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
 		<key>views/index.jade</key>
 		<dict>
 			<key>caret</key>
@@ -138,8 +152,9 @@
 	<array>
 		<string>app.js</string>
 		<string>multiSockets.js</string>
-		<string>node_modules/socket.io-client/node_modules/ws/bench/speed.js</string>
 		<string>CRTest.js</string>
+		<string>test.js</string>
+		<string>startTestClients.js</string>
 		<string>views/index.jade</string>
 		<string>routes/index.js</string>
 		<string>client.js</string>
@@ -148,6 +163,6 @@
 	<key>showFileHierarchyDrawer</key>
 	<true/>
 	<key>windowFrame</key>
-	<string>{{309, -14}, {998, 774}}</string>
+	<string>{{282, 4}, {998, 774}}</string>
 </dict>
 </plist>

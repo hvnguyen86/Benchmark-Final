@@ -1,7 +1,4 @@
-var client = require('socket.io-client');
-var host ="http://localhost:3000";
-
-var count=400;
+var count = 0;
 
 var receivers = [];
 var controllers = [];
@@ -10,10 +7,9 @@ var average = 0;
 var times = [];
 var total = 0;
 
-start();
 
 function createReceivers(){
-	var socket = client.connect(host , {"force new connection":true});
+	var socket = io.connect($('#host').val(), {"force new connection": true});
 	receivers.push(socket);
 	socket.on("connect",function (command){
 		var session = socket.socket.sessionid;
@@ -22,52 +18,55 @@ function createReceivers(){
 		//socket.emit("testTime",new Date().getTime())
 	});
 	socket.on("testTime",function (command){
+		$('#conn').html(command.users);
 		var delta = new Date().getTime()-command.time;
-		
-		if(delta < average * 10 || average == 0 )
-		{
-			total += delta;
+		total += delta;
 			times.push(delta);
 			average = total/times.length; 
-			console.log(average + " " + delta);
-	  }
-		else 
-			console.log(delta);
-		
-		//console.log(socket.socket.sessionid);
+			$('#output').append(average + "\n")
 	});
+	
+	socket.on("disconnect",function(){
+		console.log(socket.socket.sessionid,"Disonnect");
+	})
 }
 
 //http://139.6.253.55:3000/socket.io/1/websocket/9095228841969714372
 var j = 0;
-function sendCommands(){
-	
-}
-
 
 function createControllers(){
-	var socket = client.connect(host,{"force new connection":true});
+	var socket = io.connect($('#host').val(),{"force new connection":true});
 	controllers.push(socket);
 }
-
 function start(){
+	if($('#clients').val() == parseInt($('#clients').val())){
+		count=$('#clients').val();
+	}
+	
+	else {
+		alert("That's not an Integer! Don't try to hack me :-(");
+		return;
+	}
+	
 	for(var i=0;i<count;i++){
 		createReceivers();
 		createControllers();
 	}
-
-
 	setInterval(function(){
 		if(j>=controllers.length){
 			j=0;
 		}
-	
-	
 		controllers[j].emit("testTime",sessionids[j],new Date().getTime());
 	
 		j++;
 	},1000);
 }
-console.log("start with" + controllers.length + "clients");
 
+function stop(){
+	//alert("stop");
+	for(var i = 0 ;i<controllers.length;i++){
+		controllers[i].disconnect();
+		receivers[i].disconnect();
+	}
+}
 

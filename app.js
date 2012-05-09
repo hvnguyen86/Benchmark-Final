@@ -34,7 +34,11 @@ app.get('/', function(req,res){
 	
 });
 
-app.listen(4000, function(){
+app.get('/test',function(req,res){
+	res.render('test',{title : "testclient"})
+});
+
+app.listen(80, function(){
   console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
 });
 
@@ -42,7 +46,9 @@ var exec = require('child_process').exec;
 var sys = require('util');
 var clients = parseInt(process.argv[2]) || 0 ;
 
-if(clients == 0){
+
+
+/*if(clients == 0){
 	clients = 5;
 }
 
@@ -52,6 +58,6 @@ for(var i = 0;i<clients;i++){
 	
 	});
 	
-}
+}*/
 
-console.log(clients+" websocket-clients started");
+//console.log(clients+" websocket-clients started");

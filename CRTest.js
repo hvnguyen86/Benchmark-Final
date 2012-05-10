@@ -1,7 +1,7 @@
 var client = require('socket.io-client');
 var host ="http://localhost:3000";
 
-var count=400;
+var count=100;
 
 var receivers = [];
 var controllers = [];
@@ -21,9 +21,8 @@ function createReceivers(){
 		sessionids.push(session);
 		//socket.emit("testTime",new Date().getTime())
 	});
-	socket.on("testTime",function (command){
-		var delta = new Date().getTime()-command.time;
-		
+	socket.on("message",function (message){
+		var delta = new Date().getTime()-message;
 		if(delta < average * 10 || average == 0 )
 		{
 			total += delta;
@@ -33,8 +32,6 @@ function createReceivers(){
 	  }
 		else 
 			console.log(delta);
-		
-		//console.log(socket.socket.sessionid);
 	});
 }
 
@@ -63,7 +60,7 @@ function start(){
 		}
 	
 	
-		controllers[j].emit("testTime",sessionids[j],new Date().getTime());
+		controllers[j].send(sessionids[j],new Date().getTime());
 	
 		j++;
 	},1000);

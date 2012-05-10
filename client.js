@@ -9,18 +9,21 @@ var max =10000;
 var min = 1000;
 
 var x=(Math.random() * (max - min)) + min;
-var socket = client.connect(host);
+var socket = client.connect(host,{"force new connection":true});
 
 var i = 0;
 
-setInterval(function(){
+/*setInterval(function(){
 	
 	x = (Math.random() * (max - min)) + min;
-	socket.emit("testTime",new Date().getTime());
 	
-},x);
+	
+},x);*/
 
-socket.on("testTime",function(command){
-	nodeLog.write(new Date().getTime() - command.time +"\n");
+
+socket.send(new Date().getTime());
+
+socket.on("message",function(message){
+	console.log(new Date().getTime() - message +"\n");
 	
 });

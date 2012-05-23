@@ -1,5 +1,5 @@
 var io = require("socket.io-client");
-var host = "http://localhost:3000"
+var host = "http://176.34.100.20";
 var count = 200;
 var sockets = [];
 for(var i=0;i<count;i++){
@@ -21,5 +21,5 @@ setInterval(function(){
 		j=0;
 	}
 	
-	sockets[j].send(new Date().getTime());
+	sockets[j++].send(new Date().getTime());
 },1000)

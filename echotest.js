@@ -6,34 +6,39 @@ var count = 200;
 var sockets = [];
 var total = 0;
 var countTime = 0; 
-for(var i=0;i<count;i++){
-	var socket = io.connect(host,{"force new connection":true});
-	sockets.push(socket);
-	//console.log(i);
-	socket.on("message",function(message){
-		countTime++;
-		time = new Date().getTime()-message;
-		total+=time;
-		timeLog.write(time+"\n");
-		fs.writeFile('public/average.txt',total/countTime,function(err){
-			if(err) throw err;
+var echo = exports;
+echo.start = function(){
+  	for(var i=0;i<count;i++){
+		var socket = io.connect(host,{"force new connection":true});
+		sockets.push(socket);
+		//console.log(i);
+		socket.on("message",function(message){
+			countTime++;
+			time = new Date().getTime()-message;
+			total+=time;
+			timeLog.write(time+"\n");
+			fs.writeFile('public/average.txt',total/countTime,function(err){
+				if(err) throw err;
+			});
+		})
+	
+		socket.on("disconnect",function(){
+			console.log("disconnect");
 		});
-	})
 	
-	socket.on("disconnect",function(){
-		console.log("disconnect");
-	});
+	}
+
+	//console.log(sockets);
+
+	var j = 0;
+	setInterval(function(){
+		if(j==sockets.length){
+			j=0;
+		}
 	
+		sockets[j].send(new Date().getTime());
+		j++;
+	},1000);
 }
 
-//console.log(sockets);
 
-var j = 0;
-setInterval(function(){
-	if(j==sockets.length){
-		j=0;
-	}
-	
-	sockets[j].send(new Date().getTime());
-	j++;
-},1000)

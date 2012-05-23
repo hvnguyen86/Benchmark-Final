@@ -4,10 +4,11 @@
  */
 
 var express = require('express')
-  , routes = require('./routes');
+  , routes = require('./routes')
+	, echotest = require('./echotest');
 
 var app = module.exports = express.createServer();
-
+echotest.start();
 // Configuration
 
 app.configure(function(){
@@ -42,22 +43,4 @@ app.listen(3001, function(){
   console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
 });
 
-var exec = require('child_process').exec;
-var sys = require('util');
-var clients = parseInt(process.argv[2]) || 0 ;
 
-exec("node echotest.js");
-
-/*if(clients == 0){
-	clients = 5;
-}
-
-for(var i = 0;i<clients;i++){
-
-	exec("node client.js",function(err,stdout,sterr){
-	
-	});
-	
-}*/
-
-//console.log(clients+" websocket-clients started");

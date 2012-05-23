@@ -31,7 +31,7 @@ app.configure('production', function(){
 // Routes
 
 app.get('/', function(req,res){
-	res.render("index",{title:"WeControl TestClients",clients:clients})
+	res.render("index",{title:"WeControl TestClients"})
 	
 });
 

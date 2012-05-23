@@ -8,7 +8,18 @@ var total = 0;
 var countTime = 0; 
 var echo = exports;
 echo.start = function(){
-  	for(var i=0;i<count;i++){
+	  
+		//clear logs before start
+		fs.writeFile('public/time.log',"",function(err){
+			if(err) throw err;
+		});
+		
+		fs.writeFile('public/average.txt',"",function(err){
+			if(err) throw err;
+		});
+  	
+		
+		for(var i=0;i<count;i++){
 		var socket = io.connect(host,{"force new connection":true});
 		sockets.push(socket);
 		//console.log(i);

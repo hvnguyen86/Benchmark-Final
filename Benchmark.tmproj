@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>app.js</string>
+	<string>echotest.js</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -35,19 +35,33 @@
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
+		<key>README</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>0</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
 		<key>app.js</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>13</integer>
+				<integer>50</integer>
 				<key>line</key>
-				<integer>40</integer>
+				<integer>33</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>8</integer>
+			<integer>7</integer>
 		</dict>
 		<key>client.js</key>
 		<dict>
@@ -63,14 +77,56 @@
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
+		<key>echotest.js</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>15</integer>
+				<key>line</key>
+				<integer>4</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
 		<key>multiSockets.js</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>40</integer>
+				<integer>1</integer>
 				<key>line</key>
-				<integer>15</integer>
+				<integer>12</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>package.json</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>0</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>public/average.txt</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>0</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -91,6 +147,34 @@
 			<key>firstVisibleLine</key>
 			<integer>1577</integer>
 		</dict>
+		<key>public/time.log</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>0</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>10541</integer>
+		</dict>
+		<key>result.txt</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>22</integer>
+				<key>line</key>
+				<integer>0</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
 		<key>routes/index.js</key>
 		<dict>
 			<key>caret</key>
@@ -110,9 +194,9 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>1</integer>
+				<integer>0</integer>
 				<key>line</key>
-				<integer>13</integer>
+				<integer>18</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -138,7 +222,7 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>31</integer>
+				<integer>0</integer>
 				<key>line</key>
 				<integer>1</integer>
 			</dict>
@@ -165,15 +249,16 @@
 	<key>openDocuments</key>
 	<array>
 		<string>app.js</string>
-		<string>views/test.jade</string>
+		<string>result.txt</string>
+		<string>README</string>
 		<string>multiSockets.js</string>
-		<string>CRTest.js</string>
+		<string>package.json</string>
+		<string>echotest.js</string>
+		<string>public/time.log</string>
+		<string>public/average.txt</string>
 		<string>test.js</string>
 		<string>startTestClients.js</string>
 		<string>views/index.jade</string>
-		<string>routes/index.js</string>
-		<string>client.js</string>
-		<string>public/node.log</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<true/>

@@ -14,9 +14,9 @@ echo.start = function(){
 			if(err) throw err;
 		});
 		
-		fs.writeFile('public/average.txt',"",function(err){
+		/*fs.writeFile('public/average.txt',"",function(err){
 			if(err) throw err;
-		});
+		});*/
   	
 		
 		for(var i=0;i<count;i++){
@@ -27,11 +27,13 @@ echo.start = function(){
 			countTime++;
 			time = new Date().getTime()-message;
 			total+=time;
+			//console.log(time);
 			timeLog.write(time+"\n");
-			fs.writeFile('public/average.txt',total/countTime,function(err){
+			/*fs.writeFile('public/average.txt',total/countTime,function(err){
 				if(err) throw err;
-			});
-		})
+			});*/
+			socket.send(new Date().getTime());
+		});
 	
 		socket.on("disconnect",function(){
 			console.log("disconnect");
@@ -40,16 +42,21 @@ echo.start = function(){
 	}
 
 	//console.log(sockets);
-
+ parallelSockets();
 	var j = 0;
-	setInterval(function(){
+	/*setInterval(function(){
 		if(j==sockets.length){
 			j=0;
 		}
 	
 		sockets[j].send(new Date().getTime());
 		j++;
-	},1000);
+	},2);*/
 }
 
+function parallelSockets(){
+	for(var i = 0 ;i<count;i++){
+		sockets[i].send(new Date().getTime());
+	}
+}
 

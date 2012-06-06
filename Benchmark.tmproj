@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>echotest.js</string>
+	<string>app.js</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -54,14 +54,14 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>50</integer>
+				<integer>3</integer>
 				<key>line</key>
-				<integer>33</integer>
+				<integer>1</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>7</integer>
+			<integer>0</integer>
 		</dict>
 		<key>client.js</key>
 		<dict>
@@ -82,9 +82,9 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>15</integer>
+				<integer>7</integer>
 				<key>line</key>
-				<integer>4</integer>
+				<integer>18</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -153,20 +153,6 @@
 			<dict>
 				<key>column</key>
 				<integer>0</integer>
-				<key>line</key>
-				<integer>0</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>10541</integer>
-		</dict>
-		<key>result.txt</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>22</integer>
 				<key>line</key>
 				<integer>0</integer>
 			</dict>
@@ -249,16 +235,8 @@
 	<key>openDocuments</key>
 	<array>
 		<string>app.js</string>
-		<string>result.txt</string>
-		<string>README</string>
-		<string>multiSockets.js</string>
-		<string>package.json</string>
-		<string>echotest.js</string>
 		<string>public/time.log</string>
-		<string>public/average.txt</string>
-		<string>test.js</string>
-		<string>startTestClients.js</string>
-		<string>views/index.jade</string>
+		<string>echotest.js</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<true/>

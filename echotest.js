@@ -1,8 +1,8 @@
 var fs = require('fs');
 var io = require("socket.io-client");
-var host = "http://176.34.100.20";
+var host = "http://46.137.112.231:3000";
 var timeLog = fs.createWriteStream(__dirname+'/public/time.log',{flags:'a',mode:0666, encoding:'encoding'});
-var count = 200;
+var count = 50;
 var sockets = [];
 var total = 0;
 var countTime = 0; 

@@ -2,7 +2,7 @@ var fs = require('fs');
 var io = require("socket.io-client");
 var host = "http://localhost:3000";
 var timeLog = fs.createWriteStream(__dirname+'/public/time.log',{flags:'a',mode:0666, encoding:'encoding'});
-var count = 200;
+var count = 10;
 var sockets = [];
 var total = 0;
 var countTime = 0; 
@@ -12,25 +12,23 @@ echo.start = function(){
 			if(err) throw err;
 		});
 		
-		for(var i=0;i<count;i++){
-		var socket = io.connect(host,{"force new connection":true});
-		sockets.push(socket);
-		//console.log(i);
-		socket.on("message",function(message){
-			countTime++;
-			time = new Date().getTime()-message;
-			total+=time;
-			timeLog.write(time+"\n");
-			socket.send(new Date().getTime());
+		sockets.push(io.connect(host,{"force new connection":true}));
+		
+		sockets[0].on("message",function(message){
+			timeLog.write(new Date().getTime()-message+"\n");
+			sockets[0].send(new Date().getTime());
 		});
-		socket.on("disconnect",function(){
-			console.log("disconnect");
-		});
+		
+		for(var i=1;i<count;i++){
+			var socket = io.connect(host,{"force new connection":true});
+			sockets.push(socket);
+			//console.log(i);
+			socket.on("message",function(message){
+				socket.send("hello");
+		})
 	
 	}
-
- parallelSockets();
-	var j = 0;
+	parallelSockets();
 }
 
 function parallelSockets(){

@@ -8,23 +8,25 @@ var total = 0;
 var countTime = 0; 
 var echo = exports;
 echo.start = function(){
-		fs.writeFile('public/time.log',"",function(err){
+		/*fs.writeFile('public/time.log',"",function(err){
 			if(err) throw err;
-		});
+		});*/
 		
-		sockets.push(io.connect(host,{"force new connection":true}));
+		/*sockets.push(io.connect(host,{"force new connection":true}));
 		
 		sockets[0].on("message",function(message){
 			timeLog.write(new Date().getTime()-message+"\n");
 			sockets[0].send(new Date().getTime());
-		});
+		});*/
 		
-		for(var i=1;i<count;i++){
+		for(var i=0;i<count;i++){
 			var socket = io.connect(host,{"force new connection":true});
 			sockets.push(socket);
 			//console.log(i);
 			socket.on("message",function(message){
-				socket.send("hello");
+				console.log(new Date().getTime()-message);
+				socket.send(new Date().getTime());
+				
 		})
 	
 	}

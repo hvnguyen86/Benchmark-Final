@@ -1,11 +1,8 @@
 var fs = require('fs');
 var io = require("socket.io-client");
 var host = "http://localhost:3000";
-var timeLog = fs.createWriteStream(__dirname+'/public/time.log',{flags:'a',mode:0666, encoding:'encoding'});
 var count = 10;
 var sockets = [];
-var total = 0;
-var countTime = 0; 
 var echo = exports;
 echo.start = function(){
 		/*fs.writeFile('public/time.log',"",function(err){

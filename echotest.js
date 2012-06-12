@@ -5,9 +5,9 @@ var count = 10;
 var sockets = [];
 var echo = exports;
 echo.start = function(){
-		/*fs.writeFile('public/time.log',"",function(err){
+		fs.writeFile('public/client.log',"",function(err){
 			if(err) throw err;
-		});*/
+		});
 		
 		/*sockets.push(io.connect(host,{"force new connection":true}));
 		

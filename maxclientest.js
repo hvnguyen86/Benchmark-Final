@@ -1,10 +1,9 @@
 var fs = require('fs');
 var io = require("socket.io-client");
 var host = "http://46.137.112.231:3000";
-var count = 1;
+var count = 100;
 var sockets = [];
-var echo = exports;
-echo.start = function(){
+(function(){
 		//clear measuersments of the last test
 		fs.writeFile('public/client.log',"",function(err){
 			if(err) throw err;
@@ -19,11 +18,4 @@ echo.start = function(){
 				
 		});
 	}
-	parallelSockets();
-}
-function parallelSockets(){
-	for(var i = 0 ;i<count;i++){
-		sockets[i].send(new Date().getTime());
-	}
-}
-
+})();

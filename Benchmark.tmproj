@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>websocket-server.js</string>
+	<string>echotest.js</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -54,9 +54,9 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>3</integer>
+				<integer>0</integer>
 				<key>line</key>
-				<integer>1</integer>
+				<integer>8</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -82,9 +82,23 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>22</integer>
+				<integer>72</integer>
 				<key>line</key>
+				<integer>12</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>maxclientest.js</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
 				<integer>15</integer>
+				<key>line</key>
+				<integer>3</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -321,12 +335,15 @@
 	<key>openDocuments</key>
 	<array>
 		<string>app.js</string>
+		<string>routes/index.js</string>
 		<string>echotest.js</string>
+		<string>maxclientest.js</string>
 		<string>opensockets.js</string>
 		<string>node_modules/websocket/wscript</string>
 		<string>node_modules/websocket/index.js</string>
 		<string>node_modules/websocket/package.json</string>
 		<string>websocket-server.js</string>
+		<string>client.js</string>
 		<string>startTestClients.js</string>
 		<string>websocket-client.js</string>
 		<string>public/time.log</string>
@@ -334,6 +351,6 @@
 	<key>showFileHierarchyDrawer</key>
 	<true/>
 	<key>windowFrame</key>
-	<string>{{282, 4}, {998, 774}}</string>
+	<string>{{272, 4}, {998, 774}}</string>
 </dict>
 </plist>
